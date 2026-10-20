@@ -1,0 +1,5 @@
+const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+window.onload=()=>{const m=document.getElementById("month");months.forEach(x=>m.innerHTML+=`<option>${x}</option>`)};
+function build(leap){const md=leap?[31,29,31,30,31,30,31,31,30,31,30,31]:[31,28,31,30,31,30,31,31,30,31,30,31];let c2d={},d2c={},n=1;for(let m=0;m<12;m++){for(let d=1;d<=md[m];d++){let c=n<=99?String(n):String.fromCharCode(65+Math.floor((n-100)/10))+((n-100)%10);c2d[c]=months[m]+" "+d;d2c[months[m]+" "+d]=c;n++;}}return {c2d,d2c};}
+function lookupCode(){let leap=document.getElementById('year').value==='Leap';let r=build(leap).c2d[document.getElementById('code').value.toUpperCase()]||'Not Found';document.getElementById('result').innerText=r;}
+function lookupDate(){let leap=document.getElementById('year').value==='Leap';let key=document.getElementById('month').value+' '+document.getElementById('day').value;let r=build(leap).d2c[key]||'Not Found';document.getElementById('coderesult').innerText=r;}

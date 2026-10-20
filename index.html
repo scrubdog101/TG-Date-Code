@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TG Date Code Lookup</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:linear-gradient(rgba(255,255,255,.90),rgba(255,255,255,.90)),url("logo.jpg");background-repeat:no-repeat;background-position:center;background-size:75%;background-attachment:fixed;}
+.card{max-width:700px;margin:20px auto;background:white;padding:20px;border-radius:16px;box-shadow:0 0 10px rgba(0,0,0,.15)}
+input,select,button{width:100%;padding:12px;margin:8px 0;font-size:18px}
+.result{font-size:24px;font-weight:bold;color:#114b9a}
+hr{margin:20px 0}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>Toyoda Gosei Date Code Lookup</h1>
+<p>Place logo.jpg in this same folder.</p>
+<h3>Code → Date</h3>
+<input id="code" placeholder="Enter Code (X6)">
+<select id="year"><option>Leap</option><option>Non-Leap</option></select>
+<button onclick="lookupCode()">Lookup Code</button>
+<div id="result" class="result"></div>
+<hr>
+<h3>Date → Code</h3>
+<select id="month"></select>
+<input id="day" type="number" min="1" max="31" value="1">
+<button onclick="lookupDate()">Lookup Date</button>
+<div id="coderesult" class="result"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

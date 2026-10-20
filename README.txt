@@ -1,0 +1,1 @@
+Put your Toyoda Gosei logo in this folder and name it logo.jpg
